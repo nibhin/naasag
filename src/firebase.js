@@ -1,14 +1,16 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getAuth } from 'firebase/auth';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "process.env.REACT_APP_API_KEY",
-  authDomain: "process.env.REACT_APP_AUTH_DOMAIN",
+  apiKey: "AIzaSyDSV5RXu0-h8hc26CK3ZzxsEgqBIadyPzY",
+  authDomain: "naasa-project.firebaseapp.com",
   projectId: "naasa-project",
   storageBucket: "naasa-project.appspot.com",
   messagingSenderId: "505267906967",
@@ -16,6 +18,9 @@ const firebaseConfig = {
   measurementId: "G-C2Y319BRDD"
 };
 
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const auth = getAuth(app);
+export { auth };
