@@ -8,6 +8,7 @@ import MapPage from './components/MapPage.js'; // Import the MapPage component
 import OptionsPage from './components/OptionsPage.js'; // Import OptionsPage
 import CropSelection from './components/CropSelection.js'; // Import CropSelection component
 import IrrigationPage from './components/IrrigationPage.js'; // Import the IrrigationPage
+import SisAlertsPage from './components/SisAlertsPage.js'; // Ensure this matches the filename
 
 function App() {
   return (
@@ -16,12 +17,12 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="*" element={<NotFound />} /> {/* Optional: catch-all for 404 */}
         <Route path="/map" element={<MapPage />} />
         <Route path="/options" element={<OptionsPage />} />
-        <Route path="/crop-selection" element={<CropSelection />} /> {/* New route for Crop Selection */}
-        <Route path="/irrigation" element={<IrrigationPage />} /> {/* New route for Crop Selection */}
-
+        <Route path="/crop-selection" element={<CropSelection />} />
+        <Route path="/irrigation" element={<IrrigationPage />} />
+        <Route path="/sisalerts" element={<SisAlertsPage />} /> {/* Correctly set as an element */}
+        <Route path="*" element={<NotFound />} /> {/* Optional: catch-all for 404 */}
       </Routes>
     </Router>
   );

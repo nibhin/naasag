@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
+import './MapPage.css'; // Import CSS for styling
+
 import 'leaflet/dist/leaflet.css';
 
 const LocationMarker = ({ setPosition, navigate }) => {
@@ -14,11 +16,12 @@ const LocationMarker = ({ setPosition, navigate }) => {
             setPosition([lat, lng]); // Update the position state
             
             // Redirect to OptionsPage with selected location
-            navigate('/options', { state: { location: { lat, lng } } });
+            console.log("Navigating to OptionsPage with:", { lat, lng, name: "Selected Location" });
+            navigate('/options', { state: { location: { lat, lng, name: "Selected Location" } } });
         },
     });
 
-    return markerPosition === null ? null : <Marker position={markerPosition} />;
+    return markerPosition === null ? null : <Marker position={markerPosition} className="marker marker-animated" />;
 };
 
 const MapPage = () => {
@@ -34,7 +37,8 @@ const MapPage = () => {
                 setPosition([y, x]); // Update the position
                 
                 // Redirect to OptionsPage with selected location
-                navigate('/options', { state: { location: { lat: y, lng: x } } });
+                console.log("Navigating to OptionsPage with search result:", { lat: y, lng: x, name: result[0].label });
+                navigate('/options', { state: { location: { lat: y, lng: x, name: result[0].label } } });
             } else {
                 alert('Location not found');
             }

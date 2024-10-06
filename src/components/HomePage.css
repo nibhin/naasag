@@ -1,0 +1,77 @@
+/* HomePage.css */
+
+/* Keyframes for the starry background animation */
+@keyframes starryBackground {
+    0% {
+        background-color: #000428;
+    }
+    50% {
+        background-color: #004e92;
+    }
+    100% {
+        background-color: #000428;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #000428, #004e92);
+    animation: starryBackground 20s ease-in-out infinite; /* Cyclic background animation */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage-container {
+    text-align: center; /* Center-align text */
+    color: #ffffff; /* White text color */
+    position: relative; /* Allow positioning of children */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Shadow effect */
+    backdrop-filter: blur(10px); /* Blurring effect for background */
+}
+
+h1 {
+    font-size: 3em; /* Increase the font size */
+    margin-bottom: 20px; /* Spacing below the title */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Text shadow for depth */
+}
+
+/* Styling for the navigation buttons */
+.nav-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Space between buttons */
+}
+
+.nav-button {
+    background-color: #FFCC00; /* Yellow color for buttons */
+    color: #001F3F; /* Dark color for text */
+    padding: 15px 30px; /* Padding around the button */
+    font-size: 1.2em; /* Increase font size */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Animation for hover effect */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.nav-button:hover {
+    background-color: #FFD700; /* Lighter yellow on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Smaller font size for smaller screens */
+    }
+
+    .nav-button {
+        font-size: 1em; /* Adjust font size for buttons */
+    }
+}

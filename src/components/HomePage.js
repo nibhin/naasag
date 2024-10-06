@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './HomePage.css'; // Import CSS for styling
 
 function HomePage() {
   return (
-    <div>
-      <h1>Welcome to the Home Page</h1>
-      <nav>
-        <ul>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/register">Register</Link></li>
-        </ul>
+    <div className="homepage-container">
+      {/* <h1>Welcome to the Home Page</h1> */}
+      <nav className="nav-buttons">
+        <Link to="/login" className="nav-button">Login</Link>
+        <Link to="/register" className="nav-button">Register</Link>
       </nav>
     </div>
   );

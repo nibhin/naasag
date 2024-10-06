@@ -1,0 +1,70 @@
+/* App.css */
+
+body {
+  background: url('https://images.unsplash.com/photo-1492521301453-49fd7c05e4b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3MjV8MHwxfGFsbHwxfHx8fHx8fHwxNjI3Njg0MTU3&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed; /* Space background */
+  background-size: cover;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif; /* You can change this to a more space-themed font if desired */
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
+  max-width: 400px; /* Maximum width for the container */
+  padding: 20px;
+  margin: 100px auto; /* Centering the login form vertically and horizontally */
+  text-align: center; /* Center text within the container */
+}
+
+h2 {
+  font-size: 2em; /* Larger font size for the heading */
+  margin-bottom: 20px; /* Spacing below the heading */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Soft text shadow for depth */
+}
+
+label {
+  display: block; /* Labels in a block layout */
+  margin: 10px 0 5px; /* Margins around labels */
+}
+
+input {
+  width: 100%; /* Full width input */
+  padding: 10px; /* Padding inside inputs */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded input corners */
+  margin-bottom: 15px; /* Spacing below inputs */
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white background */
+  color: #ffffff; /* White text */
+  font-size: 1em; /* Font size */
+}
+
+input:focus {
+  outline: none; /* Remove outline on focus */
+  background-color: rgba(255, 255, 255, 0.4); /* Change background on focus */
+}
+
+button {
+  background-color: #ffcc00; /* Bright yellow for buttons */
+  color: #000; /* Black text */
+  padding: 10px 20px; /* Padding inside buttons */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded button corners */
+  font-size: 1.1em; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+button:hover {
+  background-color: #e6b800; /* Darken button color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .login-container {
+      width: 90%; /* Full width on small screens */
+      padding: 15px; /* Adjust padding for small screens */
+  }
+}

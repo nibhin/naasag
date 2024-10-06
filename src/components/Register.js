@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { auth } from '../firebase.js'; // Adjust the path here
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import './App.css'; // Import CSS for styling
+import './register.css'; // Import CSS for styling
 
 const Register = () => {
     const [email, setEmail] = useState('');

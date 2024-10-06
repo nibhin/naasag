@@ -1,30 +1,72 @@
-.map-page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+/* MapPage.css */
+
+/* Setting the body styles */
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: 'Arial', sans-serif; /* Use a clean sans-serif font */
+  background-color: #000; /* Dark background for better map visibility */
+}
+
+/* Container for the entire map page */
+.map-container {
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column; /* Stack children vertically */
+}
+
+/* Style for the input and button container */
+.input-container {
+  position: absolute; /* Positioning for overlay effect */
+  top: 20px; /* Distance from the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust center position */
+  z-index: 1000; /* Ensure it stays above the map */
+  color: #FFCC00; /* Bright color for text */
+}
+
+/* Style for the map */
+.leaflet-container {
+  flex: 1; /* Allow map to take up remaining space */
+  width: 100%; /* Full width */
+  height: calc(100vh - 80px); /* Full height minus the input area */
+}
+
+/* Map input field styles */
+input[type="text"] {
+  padding: 10px; /* Padding inside the input */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  margin-right: 10px; /* Space between input and button */
+  font-size: 16px; /* Increase font size */
+  width: 200px; /* Fixed width for the input */
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px; /* Padding around button text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #FFCC00; /* Bright yellow color */
+  color: #001F3F; /* Dark color for text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #FFD700; /* Lighter yellow on hover */
+}
+
+/* Responsive media query */
+@media (max-width: 768px) {
+  input[type="text"] {
+      font-size: 14px; /* Smaller font size for mobile */
+      width: 150px; /* Adjust width for mobile */
   }
-  
-  .search-bar {
-    margin: 20px;
-    display: flex;
+
+  button {
+      font-size: 14px; /* Smaller button text */
   }
-  
-  .search-bar input {
-    width: 300px;
-    padding: 10px;
-    margin-right: 10px;
-    font-size: 16px;
-  }
-  
-  .search-bar button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .map-container {
-    width: 100%;
-    height: calc(100vh - 80px); /* Adjust this based on your layout */
-  }
-  
+}
