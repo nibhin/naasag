@@ -1,40 +1,31 @@
+// src/components/Login.js
 import React, { useState } from 'react';
-import { auth } from '../firebase.js'; // Import the auth instance
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase.js'; // Ensure this path is correct
+import { signInWithEmailAndPassword } from 'firebase/auth'; // Import the signIn function
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './App.css'; // Import CSS for styling
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [message, setMessage] = useState(''); // State to hold success/error messages
+    const [email, setEmail] = useState(''); // State for email
+    const [password, setPassword] = useState(''); // State for password
+    const navigate = useNavigate(); // Initialize useNavigate for navigation
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Clear previous messages
-        setMessage('');
-
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Successful login
-                const user = userCredential.user;
-                setMessage(`Login successful! Welcome ${user.email}`); // Success message
-                console.log('Logged in with:', user.email);
-                
-                // Optionally, you can redirect the user to another page here
-                // For example: history.push('/dashboard');
-            })
-            .catch((error) => {
-                // Handle errors here
-                setMessage('Invalid email or password. Please try again.'); // Error message
-                console.error('Login Error:', error);
-            });
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // Prevent default form submission behavior
+        try {
+            // Use the imported signInWithEmailAndPassword function
+            await signInWithEmailAndPassword(auth, email, password);
+            console.log('Login successful');
+            navigate('/map'); // Redirect to MapPage
+        } catch (error) {
+            console.error('Login failed:', error.message);
+            alert('Login failed: ' + error.message); // Display error message
+        }
     };
 
     return (
         <div className="login-container">
             <h2>Login</h2>
-            {message && <p style={{ color: message.includes('successful') ? 'green' : 'red' }}>{message}</p>} {/* Show message based on success or error */}
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Email:</label>

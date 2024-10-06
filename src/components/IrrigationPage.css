@@ -1,0 +1,54 @@
+/* src/components/IrrigationPage.css */
+.irrigation-container {
+    padding: 20px;
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+.input-container label {
+    display: block;
+    margin-top: 10px;
+}
+
+.input-container input,
+.input-container select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+.result-container {
+    margin-top: 20px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #555; /* Dark background color */
+    color: white; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    text-align: center; /* Center the text */
+}
+
+.back-button:hover {
+    background-color: #777; /* Lighter on hover */
+}

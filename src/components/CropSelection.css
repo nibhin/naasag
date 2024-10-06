@@ -1,0 +1,75 @@
+/* CropSelection.css */
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+    font-family: 'Arial', sans-serif; /* Font style */
+}
+
+.crop-selection-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1e1e1e; /* Darker background for container */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+h2 {
+    text-align: center;
+    color: #f0f0f0; /* Lighter heading color */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3a3a3a; /* Dark background for select */
+    color: #ffffff; /* Light text color for select */
+    font-size: 16px;
+}
+
+select:focus {
+    outline: none; /* Remove default outline */
+    background-color: #4a4a4a; /* Slightly lighter background on focus */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6200ea; /* Purple button */
+    color: #ffffff; /* White text color */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3700b3; /* Darker purple on hover */
+}
+
+.recommended-crops {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2a2a2a; /* Dark background for crop recommendations */
+    border-radius: 5px;
+}
+
+.recommended-crops ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recommended-crops li {
+    margin: 5px 0;
+    color: #90caf9; /* Light blue color for crop names */
+}
